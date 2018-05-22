@@ -65,9 +65,9 @@ class ProductRepository extends BaseRepository
      */
     public function create(array $input)
     {
-
         $input['publish_datetime'] = Carbon::parse($input['publish_datetime']);
         $input = $this->uploadImage($input);
+        $input['slug'] = str_slug($input['name']);
         if(Product::create($input)){
             return true;
         }

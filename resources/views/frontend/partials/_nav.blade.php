@@ -1,43 +1,61 @@
 <!--Double navigation-->
 <header>
-    @include('frontend.sidebars.left_sidebar')
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" style="background-color: #22404f">
-        <!-- SideNav slide-out button -->
-        <div class="float-left">
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+     <!-- *** TOPBAR ***
+ _________________________________________________________ -->
+    <div id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a>
+            </div>
+            <div class="col-md-6" data-animate="fadeInDown">
+                <ul class="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    </li>
+                    <li><a href="register.html">Register</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a>
+                    </li>
+                    <li><a href="#">Recently viewed</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- Breadcrumb-->
-        <div class="breadcrumb-dn mr-auto">
-            <p><a href="">{{ trans('navs.frontend.blog') }}</a></p>
-        </div>
-        <ul class="nav navbar-nav nav-flex-icons ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/home"><span class="clearfix d-none d-sm-inline-block white-text">
-                  {{ trans('navs.frontend.home') }}</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/about" class="nav-link"> <span class="clearfix d-none d-sm-inline-block white-text">
-                  {{ trans('navs.frontend.about') }}</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/contact" class="nav-link"> <span class="clearfix d-none d-sm-inline-block white-text">
-                  {{ trans('navs.frontend.contact') }}</span>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle white-text" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ trans('navs.frontend.page') }}
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    @foreach($pages as $page)
-                    <a class="dropdown-item" href="{{ route('frontend.frontend.page', $page->page_slug)}}">{{ $page->title }}</a>
-                    @endforeach
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="Login">Customer login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="customer-orders.html" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email-modal" placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password-modal" placeholder="password">
+                            </div>
+
+                            <p class="text-center">
+                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                            </p>
+
+                        </form>
+
+                        <p class="text-center text-muted">Not registered yet?</p>
+                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </nav>
-    <!-- /.Navbar -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- *** TOP BAR END *** -->
+ @include('frontend.partials._nav2')
+
+   
+
 </header>

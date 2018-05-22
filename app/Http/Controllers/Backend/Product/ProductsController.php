@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Product;
 
 use App\Models\Product\Product;
+use App\Models\ProductCategory\Productcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Backend\Product\ProductRepository;
@@ -62,7 +63,9 @@ class ProductsController extends Controller
      */
     public function create(CreateProductRequest $request)
     {
+        $productCategories = Productcategory::all();
         return view('backend.products.create')->with([
+            'productCategories' =>  $productCategories,
             'status'=> $this->status,
         ]);
     }
@@ -76,6 +79,7 @@ class ProductsController extends Controller
     {
         //Input received from the request
         $input = $request->except(['_token']);
+        // dd($input);
         $this->product->create($input);
         //return with successfull message
         return redirect()->route('admin.products.index')->withFlashSuccess(trans('alerts.backend.products.created'));
@@ -89,8 +93,10 @@ class ProductsController extends Controller
      */
     public function edit(Product $product, EditProductRequest $request)
     {
+         $productCategories = Productcategory::all();
         return view('backend.products.edit', compact('product'))->with([
             'status'=> $this->status,
+             'productCategories' =>  $productCategories,
         ]);;
     }
     /**
@@ -102,7 +108,6 @@ class ProductsController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        // dd($request->all());
         //Input received from the request
         $input = $request->except(['_token']);
         //Update the model using repository update method

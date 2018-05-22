@@ -22,15 +22,14 @@ class ProductcategoriesController extends Controller
      * variable to store the repository object
      * @var ProductcategoryRepository
      */
-    protected $repository;
-
+    protected $productcategory;
     /**
      * contructor to initialize repository object
      * @param ProductcategoryRepository $repository;
      */
-    public function __construct(ProductcategoryRepository $repository)
+    public function __construct(ProductcategoryRepository  $productcategory)
     {
-        $this->repository = $repository;
+       $this->productcategory = $productcategory;
     }
 
     /**
@@ -62,9 +61,7 @@ class ProductcategoriesController extends Controller
     public function store(StoreProductcategoryRequest $request)
     {
         //Input received from the request
-        $input = $request->except(['_token']);
-        //Create the model using repository create method
-        $this->repository->create($input);
+      $this->productcategory->create($request->all());
         //return with successfull message
         return redirect()->route('admin.productcategories.index')->withFlashSuccess(trans('alerts.backend.productcategories.created'));
     }
@@ -88,10 +85,7 @@ class ProductcategoriesController extends Controller
      */
     public function update(UpdateProductcategoryRequest $request, Productcategory $productcategory)
     {
-        //Input received from the request
-        $input = $request->except(['_token']);
-        //Update the model using repository update method
-        $this->repository->update( $productcategory, $input );
+        $this->productcategory->update($productcategory, $request->all());
         //return with successfull message
         return redirect()->route('admin.productcategories.index')->withFlashSuccess(trans('alerts.backend.productcategories.updated'));
     }
@@ -105,7 +99,7 @@ class ProductcategoriesController extends Controller
     public function destroy(Productcategory $productcategory, DeleteProductcategoryRequest $request)
     {
         //Calling the delete method on repository
-        $this->repository->delete($productcategory);
+        $this->productcategory->delete($productcategory);
         //returning with successfull message
         return redirect()->route('admin.productcategories.index')->withFlashSuccess(trans('alerts.backend.productcategories.deleted'));
     }

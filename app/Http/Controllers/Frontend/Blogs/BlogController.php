@@ -32,12 +32,12 @@ class BlogController extends Controller
      */
     public function getSingleBlog($slug)
     {
-    	$blog =  $this->blog->find($slug);
+        $blog =  $this->blog->find($slug);
 
         if($blog)
         {
 
-    	   return view('frontend.blog.single')->withBlog($blog);
+           return view('frontend.blog.single')->withBlog($blog);
 
         }
           abort(404);

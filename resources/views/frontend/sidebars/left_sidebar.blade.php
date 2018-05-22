@@ -1,42 +1,142 @@
-<!-- Sidebar navigation -->
-<div id="slide-out" class="side-nav sn-bg-4 fixed">
-    <ul class="custom-scrollbar">
-        <!-- Logo -->
-        <li>
-            <div class="logo-wrapper waves-light">
-                <a href="http://www.cygnet-infotech.com/"><img src="/img/cygnet-logo.png" class="img-fluid flex-center"></a>
-            </div>
-        </li>
-        <!--Social-->
-        <li>
-            <ul class="social">
-                <li><a href="https://www.facebook.com/IT.is.about.you/" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                <li><a href="https://www.linkedin.com/company/cygnet-infotech-pvt--ltd-" class="icons-sm in-ic"><i class="fa fa-linkedin"> </i></a></li>
-                <li><a href="https://plus.google.com/+Cygnetinfotech-India/posts" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                <li><a href="https://twitter.com/cygnetinfotech" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
-            </ul>
-        </li>
-        <!--/Social-->
+ 
+                <div class="col-md-3">
+                    <!-- *** MENUS AND FILTERS ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
 
-        <!--Search Form-->
-        <li>
-            <form class="search-form" action="/search/" method="GET">
-                <div class="form-group md-form mt-0 pt-1 waves-light">
-                    <input type="text" class="form-control" placeholder="Search" name="s" value="{{ Request::query('s') }}">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categories</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked category-menu">
+                                <li>
+                                    <a href="category.html">Men <span class="badge pull-right">42</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="category.html">Ladies  <span class="badge pull-right">123</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="category.html">Kids  <span class="badge pull-right">11</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Armani (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Versace (12)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Carlo Bruni (15)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Jack Honey (14)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour white"></span> White (14)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour blue"></span> Blue (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour green"></span> Green (20)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour red"></span> Red (10)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+
+                            </form>
+
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </li>
-        <!--/.Search Form-->
-        
-        <!-- Side navigation links -->
-        <li>
 
-            <ul class="collapsible collapsible-accordion">
-                
-              
-            </ul>
-        </li>
-    </ul>
-    <div class="sidenav-bg mask-strong"></div>
-</div>
-<!--/. Sidebar navigation -->
+                    <!-- *** MENUS AND FILTERS END *** -->

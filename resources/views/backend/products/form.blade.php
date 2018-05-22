@@ -15,6 +15,29 @@
         </div><!--col-lg-10-->
     </div><!--form control-->
 
+
+     <div class="form-group">
+        {{ Form::label('category_name', trans('validation.attributes.backend.products.category'), ['class' => 'col-lg-2 control-label required']) }}
+
+        <div class="col-lg-10">
+        <select name="category_name" class="form-control tags box-size">
+            @foreach( $productCategories as $productCategory)
+                <option value="{{  $productCategory->id }}"> {{ $productCategory->name}}</option>
+            @endforeach
+            
+        </select>
+        </div><!--col-lg-10-->
+    </div><!--form control-->
+
+     <div class="form-group">
+        {{ Form::label('slug', trans('validation.attributes.backend.products.slug'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-10">
+            {{ Form::text('slug', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.products.slug'), 'disabled' => 'disabled']) }}
+        </div><!--col-lg-10-->
+    </div><!--form control-->
+
+
     <div class="form-group">
         {{ Form::label('publish_datetime', trans('validation.attributes.backend.products.publish'), ['class' => 'col-lg-2 control-label required']) }}
 
@@ -62,14 +85,6 @@
 
         <div class="col-lg-10">
             {{ Form::text('meta_title', null, ['class' => 'form-control box-size ', 'placeholder' => trans('validation.attributes.backend.blogs.meta-title')]) }}
-        </div><!--col-lg-10-->
-    </div><!--form control-->
-
-    <div class="form-group">
-        {{ Form::label('slug', trans('validation.attributes.backend.products.slug'), ['class' => 'col-lg-2 control-label']) }}
-
-        <div class="col-lg-10">
-            {{ Form::text('slug', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.products.slug'), 'disabled' => 'disabled']) }}
         </div><!--col-lg-10-->
     </div><!--form control-->
 

@@ -37,7 +37,13 @@ class ProductcategoriesTableController extends Controller
     public function __invoke(ManageProductcategoryRequest $request)
     {
         return Datatables::of($this->productcategory->getForDataTable())
-            ->escapeColumns(['id'])
+            ->escapeColumns(['id', 'name'])
+            ->addColumn('status', function ($productcategory) {
+                return $productcategory->status_label;
+            })
+            ->addColumn('created_by', function ($productcategory) {
+                return $productcategory->user_name;
+            })
             ->addColumn('created_at', function ($productcategory) {
                 return Carbon::parse($productcategory->created_at)->toDateString();
             })

@@ -28,6 +28,8 @@ class StoreProductRequest extends FormRequest
             'content'        => 'required',
             'price'          => 'required',
             'image'          => 'required',
+            'category_name'  =>  'required|integer',
+    
         ];
     }
 

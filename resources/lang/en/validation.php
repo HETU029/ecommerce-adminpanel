@@ -175,7 +175,12 @@ return [
                 'is_active'   => 'Active',
             ],
 
-            'blogcategories' => [
+            'productcategories' => [
+                'title'     => 'Product Category',
+                'is_active' => 'Active',
+            ],
+
+             'blogcategories' => [
                 'title'     => 'Blog Category',
                 'is_active' => 'Active',
             ],
@@ -203,6 +208,7 @@ return [
              'products' => [
                 'title'            => 'Product Title',
                 'publish'          => 'Publich Date & Time',
+                'category'         => 'Product Category',
                 'price'            => 'price',
                 'image'            => 'Featured Image',
                 'content'          => 'Content',

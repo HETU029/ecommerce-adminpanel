@@ -28,8 +28,12 @@ class ProductcategoryRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
+            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.productcategories.table').'.created_by')
             ->select([
                 config('module.productcategories.table').'.id',
+                config('module.productcategories.table').'.name',
+                config('module.productcategories.table').'.status',
+                config('module.users_table').'.first_name as user_name',
                 config('module.productcategories.table').'.created_at',
                 config('module.productcategories.table').'.updated_at',
             ]);
@@ -46,7 +50,10 @@ class ProductcategoryRepository extends BaseRepository
     {
         $productcategory = self::MODEL;
         $productcategory = new $productcategory();
-        if ($productcategory->save($input)) {
+        $productcategory->created_by = \Auth::user()->id;
+        $productcategory->name = $input['name'];
+        $productcategory->status = $input['status'] ? $input['status'] : 0;
+        if ($productcategory->save()) {
             return true;
         }
         throw new GeneralException(trans('exceptions.backend.productcategories.create_error'));

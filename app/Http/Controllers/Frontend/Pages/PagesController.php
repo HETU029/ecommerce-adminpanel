@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Blogs\Blog;
+use App\Models\Products\Product;
 use App\Models\BlogCategories\BlogCategory;
 use App\Repositories\Frontend\Pages\PagesRepository;
 use App\Models\BlogTags\BlogTag;
@@ -41,6 +41,27 @@ class PagesController extends Controller
     {
     	return view('frontend.pages.contact');
     }
+
+     /**
+     * @return \Illuminate\View\View
+     */
+    public function getBasketPage()
+    {
+        return view('frontend.pages.basket');
+    }
+
+
+      /**
+     * @return \Illuminate\View\View
+     */
+    public function postBasketPage(Request $request)
+    {
+        Cart::add($request->id,$request->name,$request->price)
+               ->associate('Product'); 
+        return view('frontend.pages.basket');
+    }
+
+
 
     /**
      * @return \Illuminate\View\View

@@ -264,14 +264,19 @@ return [
 	"all" => "All",
 	],
 	],
+
 	"productcategories" => [
-	"create" => "Create Productcategory",
-	"edit" => "Edit Productcategory",
-	"management" => "Productcategory Management",
-	"title" => "Productcategories",
+	"create" => "Create Product category",
+	"edit" => "Edit Product category",
+	"management" => "Product category Management",
+	"title" => "Product category",
 	"table" => [
 	"id" => "Id",
+	"title" => "Product Category",
+	"status" => "Status",
 	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"all" => "All",
 	],
 	],
 	],

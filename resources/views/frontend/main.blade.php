@@ -5,19 +5,20 @@
 
     @include('frontend.partials._head')
 
-    <title> laravel blog! @yield('title') </title>
+    <title> ecommerce site! @yield('title') </title>
 
 </head>
 
  <!-- Right Panel -->
-<body class="fixed-sn navy-blue-skin">
 
-    @yield('content')
 
-</body>
      @include('frontend.partials._nav')
+
+  <body>
+        @yield('content')
 
      @include('frontend.partials._footer')
 
      @include('frontend.partials._javascript')
+</body>
 </html>

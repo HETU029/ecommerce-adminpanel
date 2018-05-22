@@ -18,6 +18,7 @@
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~4.0",
+        "gloudemans/shoppingcart": "^2.5",
         "hieu-le/active": "^3.5",
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
@@ -31,7 +32,7 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.0",
         "codedungeon/phpunit-result-printer": "^0.6.0",
-        "bvipul/generator": "dev-master",
+        "bvipul/generator": "^0.9.1",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "laravel/browser-kit-testing": "^4.0.0",

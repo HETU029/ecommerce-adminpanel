@@ -23,6 +23,10 @@ return [
         'login'     => 'Login',
         'macros'    => 'Macros',
         'register'  => 'Register',
+        'home'      => 'Home',
+        'about'     => 'About us',
+        'contact'   => 'Contact Us',
+        'product'    => 'ProductSpoat: Perfect Spot For Your Product',
 
         'user' => [
             'account'         => 'My Account',

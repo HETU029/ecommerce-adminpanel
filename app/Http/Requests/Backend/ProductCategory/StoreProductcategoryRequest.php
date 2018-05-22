@@ -24,9 +24,7 @@ class StoreProductcategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //Put your rules for the request in here
-            //For Example : 'title' => 'required'
-            //Further, see the documentation : https://laravel.com/docs/5.4/validation#creating-form-requests
+            'name' => 'required|max:191',
         ];
     }
 

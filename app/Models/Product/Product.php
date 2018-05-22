@@ -34,6 +34,7 @@ class Product extends Model
          'name',
          'publish_datetime',
          'price',
+         'category_name',
          'slug',
          'status',
          'image',
@@ -76,5 +77,10 @@ class Product extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\ProductCategory\Productcategory','category_name');   
     }
 }

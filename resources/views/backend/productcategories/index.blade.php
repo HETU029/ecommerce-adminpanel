@@ -22,6 +22,9 @@
                     <thead>
                         <tr>
                             <th>{{ trans('labels.backend.productcategories.table.id') }}</th>
+                            <th>{{ trans('labels.backend.productcategories.table.title') }}</th>
+                            <th>{{ trans('labels.backend.productcategories.table.status') }}</th>
+                            <th>{{ trans('labels.backend.productcategories.table.createdby') }}</th>
                             <th>{{ trans('labels.backend.productcategories.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -55,6 +58,9 @@
                 },
                 columns: [
                     {data: 'id', name: '{{config('module.productcategories.table')}}.id'},
+                    {data: 'name', name: '{{config('module.productcategories.table')}}.name'},
+                    {data: 'status', name: '{{config('module.productcategories.table')}}.status'},
+                    {data: 'created_by', name: '{{config('module.productcategories.table')}}.created_by'},
                     {data: 'created_at', name: '{{config('module.productcategories.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
